@@ -14,8 +14,6 @@ class MappingAdmin(admin.ModelAdmin):
     list_display = (
         "config_name",
         "extract_all_params",
-        "window_ms",
-        "frequency",
         "updated_at",
     )
 
@@ -26,8 +24,6 @@ class MappingAdmin(admin.ModelAdmin):
         "tracking_url",
         "extract_all_params",
         "params",
-        "window_ms",
-        "frequency",
         "last_suffix",
         "last_run_at",
         "updated_at",
@@ -39,7 +35,10 @@ class MappingAdmin(admin.ModelAdmin):
         for mapping in queryset:
             try:
                 run_mapping(mapping)
-                self.message_user(request, f"Successfully ran {mapping.config_name}")
+                self.message_user(
+                    request,
+                    f"Successfully ran {mapping.config_name}"
+                )
             except Exception as e:
                 self.message_user(
                     request,

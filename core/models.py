@@ -32,19 +32,7 @@ class Mapping(models.Model):
         help_text="If enabled, extract ALL query params from final redirect URL"
     )
 
-    # 🔥 NEW — millisecond based throttling
-    window_ms = models.PositiveIntegerField(
-        default=0,
-        help_text="Total window duration in milliseconds (e.g. 300000)"
-    )
-
-    frequency = models.PositiveIntegerField(
-        default=1,
-        help_text="Max number of updates allowed inside the window"
-    )
-
     last_run_at = models.DateTimeField(blank=True, null=True)
-
     last_suffix = models.TextField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
