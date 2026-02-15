@@ -1,6 +1,11 @@
 Django>=4.2
 djangorestframework
 httpx[http2]
-uvicorn
 python-dotenv
-django-crontab        # optional, for simple cron scheduling
+gunicorn
+celery[redis]
+django-celery-beat
+django-celery-results
+redis
+google-ads
+google-auth-oauthlib

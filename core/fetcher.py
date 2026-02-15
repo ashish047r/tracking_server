@@ -80,3 +80,27 @@ def extract_params(final_url: str, param_keys: list[str]) -> dict:
             extracted[key] = values[0]
 
     return extracted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
