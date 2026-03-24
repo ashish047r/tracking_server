@@ -1,11 +1,4 @@
-from urllib.parse import urlencode, urlparse
-
-
-def build_final_suffix(param_map: dict) -> str:
-    """
-    Deterministic & Google-safe
-    """
-    return urlencode(param_map)
+from urllib.parse import urlparse
 
 
 def extract_full_query(final_url: str) -> str:
